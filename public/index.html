@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="从一份会议转录出发，留下明确的决定、行动和待确认的问题。每个行动项，都能回看原话。"
+    />
+    <title>Minutes Studio · AI 小工具</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand"><span class="logo">M</span>Minutes Studio</div>
+        <div class="side-intro">
+          <div class="eyebrow">PERSONAL AI WORKSPACE</div>
+          <div class="nav-item">会议记录整理</div>
+        </div>
+        <div class="side-note">
+          把一个想法，变成可以使用的结果。<br />轻量、专注，按你的节奏。
+        </div>
+        <div class="side-bottom">
+          <div class="eyebrow">CONNECTION</div>
+          <label
+            ><span class="sr-only" hidden>运行模式</span
+            ><select id="mode" aria-label="运行模式"></select
+          ></label>
+        </div>
+        <div class="side-footer">
+          INDEPENDENT EDITION / 07<br />Built for a little more clarity.
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <span class="crumb">我的工作台 &nbsp; / &nbsp; 会议记录整理</span
+          ><span class="top-meta"
+            ><i class="dot"></i><span id="connection">正在连接…</span></span
+          >
+        </header>
+        <section class="hero">
+          <div class="eyebrow">GOOD CONVERSATIONS DESERVE A NEXT STEP</div>
+          <h1>把讨论，变成下一步。</h1>
+          <p class="description">
+            从一份会议转录出发，留下明确的决定、行动和待确认的问题。每个行动项，都能回看原话。
+          </p>
+        </section>
+        <section class="workspace">
+          <form id="minutes-form" class="panel">
+            <div class="panel-head">
+              <h2>会议原文</h2>
+              <button id="sample" type="button" class="small">载入示例</button>
+            </div>
+            <label
+              >会议名称<input
+                id="title"
+                required
+                maxlength="160"
+                placeholder="产品周会" /></label
+            ><label
+              >转录文字<textarea
+                id="transcript"
+                rows="14"
+                maxlength="30000"
+                required
+                placeholder="[00:01] 林晨：今天需要确认下一步安排。"
+              ></textarea></label
+            ><input
+              type="file"
+              id="file"
+              accept=".txt"
+              aria-label="导入转录文件"
+            />
+            <div class="toolbar">
+              <button id="summarize" class="primary">整理会议 ↗</button
+              ><button id="save" type="button">保存已生成纪要</button>
+            </div>
+            <p class="hint">
+              保存仅保留上次生成的纪要与行动状态；修改原文后请重新整理。仅整理已有文本；不录音、不转写。负责人和期限缺失时会显示「未指定」。
+            </p>
+          </form>
+          <section class="panel">
+            <div class="panel-head">
+              <h2>会议简报</h2>
+              <span class="number">MINUTES</span>
+            </div>
+            <div id="summary" class="result">
+              <div class="empty">
+                <div class="symbol">◷</div>
+                <h3>让会议结束得更清楚</h3>
+                <p>把原始转录变成可以核对、可以执行的记录。</p>
+              </div>
+            </div>
+            <div id="stats" class="stats"></div>
+            <div id="decisions"></div>
+            <div id="questions"></div>
+          </section>
+          <section class="panel full">
+            <div class="panel-head">
+              <h2>行动清单</h2>
+              <div class="row">
+                <button id="export-csv" class="small">导出 CSV</button
+                ><button id="export-md" class="small">导出纪要</button>
+              </div>
+            </div>
+            <div id="actions">
+              <p class="muted">整理后，行动项会显示在这里。</p>
+            </div>
+          </section>
+          <section class="panel full">
+            <details>
+              <summary>查看说话人与原始发言</summary>
+              <div id="utterances" class="stack"></div>
+            </details>
+          </section>
+        </section>
+        <footer class="footer">
+          <span>Minutes Studio · 独立轻量实现</span
+          ><span
+            >灵感来自
+            <a
+              href="https://github.com/Zackriya-Solutions/meetily"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Zackriya-Solutions/meetily</a
+            >
+            &nbsp; / &nbsp; 07 OF 10</span
+          >
+        </footer>
+      </main>
+    </div>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

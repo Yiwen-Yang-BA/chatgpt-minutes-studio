@@ -1,0 +1,31 @@
+{
+  "id": "chatgpt-minutes-studio",
+  "title": "Minutes Studio",
+  "number": 7,
+  "port": 3107,
+  "symbol": "M",
+  "nav": "会议记录整理",
+  "eyebrow": "GOOD CONVERSATIONS DESERVE A NEXT STEP",
+  "headline": "把讨论，变成下一步。",
+  "description": "从一份会议转录出发，留下明确的决定、行动和待确认的问题。每个行动项，都能回看原话。",
+  "features": [
+    "粘贴或导入 TXT 转录，识别说话人与时间标记",
+    "生成摘要、决策、行动项和待确认问题",
+    "核验行动项原文，不补造负责人或截止日期",
+    "行动项勾选、当前会议本地保存、Markdown 与 CSV 导出"
+  ],
+  "steps": [
+    "粘贴带说话人信息的会议转录，或导入 TXT。",
+    "点击整理会议，核对摘要、决策和原文证据。",
+    "勾选已完成行动项，再保存当前会议到浏览器。",
+    "导出 Markdown 纪要或可打开于表格软件的行动项 CSV。"
+  ],
+  "source": {
+    "name": "Zackriya-Solutions/meetily",
+    "url": "https://github.com/Zackriya-Solutions/meetily",
+    "stars": 31401,
+    "pushed": "2026-09-15",
+    "license": "MIT"
+  },
+  "scope": "复刻 Meetily 的转录后整理与行动项管理核心用途。输入必须是已有文本，不包含麦克风录音、音频转写、声纹识别、日历同步或向参会人发送消息。未指定的负责人/期限会保留未知标记。"
+}
